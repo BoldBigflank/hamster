@@ -67,7 +67,8 @@
                 },
                 vAxis: {
                     title: 'ft/s',
-                    format: '#,###'
+                    format: '#,###',
+                    logScale:true
                 }
             })
             .prepare();
