@@ -17,7 +17,10 @@
         client.draw(query, document.getElementById("distance-72hr"), {
             title:'',
             height:240,
-            // Custom configuration here
+            vAxis: {
+                format:"#,###",
+                title:'ft'
+            }
         });
 
 
@@ -56,11 +59,15 @@
         var chart = new Keen.Dataviz()
             .el(document.getElementById("max-avg-speed-by-day"))
             .chartType("columnchart")
+            .height(120)
             .chartOptions({
-                height:120,
                 hAxis: {
                     format:'MMM d',
                     gridlines:  {count: 7}
+                },
+                vAxis: {
+                    title: 'ft/s',
+                    format: '#,###'
                 }
             })
             .prepare();

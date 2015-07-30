@@ -2,22 +2,110 @@
 layout: hero-thirds
 ---
 
-<div class="home">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <h1>Jessica Rabbit Hamster Swan</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    Distance run over 72 hours
+                </div>
+                <div class="chart-stage">
+                    <div id="distance-72hr">
+                        <img data-src="holder.js/100%x240/white/text:#grid-1-1">
+                    </div>
+                </div>
+                <div class="chart-notes">
+                    Notes about this chart
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    Picture
+                </div>
+                <div class="chart-stage text-center">
+                    <p><img align="middle" src="./images/hamster.jpg" /></p>
+                </div>
+                <div class="chart-notes">
+                    Notes about this chart
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+    <div class="row">
+        <div class="col-sm-6 col-md-8">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    Max/Avg Speed by Day
+                </div>
+                <div class="chart-stage">
+                    <div id="max-avg-speed-by-day">
+                            <img data-src="holder.js/100%x120/white">
+                    </div>
+                </div>
+                <div class="chart-notes">
+                    Notes about this chart
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    Current Distance
+                </div>
+                <div class="chart-stage">
+                    <img data-src="holder.js/100%x120/white">
+                </div>
+                <div class="chart-notes">
+                    Notes about this chart
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    Location
+                </div>
+                <div class="chart-stage text-center">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2686.4343022347393!2d-122.360681!3d47.67598499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDQwJzMzLjUiTiAxMjLCsDIxJzM4LjUiVw!5e0!3m2!1sen!2sus!4v1438293739183" width="360" height="120" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <div class="chart-notes">
+                    Notes about this chart
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    Temperature
+                </div>
+                <div class="chart-stage">
+                    <img data-src="holder.js/100%x120/white">
+                </div>
+                <div class="chart-notes">
+                    Notes about this chart
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    Current Speed
+                </div>
+                <div class="chart-stage">
+                    <img data-src="holder.js/100%x120/white">
+                </div>
+                <div class="chart-notes">
+                    Notes about this chart
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
