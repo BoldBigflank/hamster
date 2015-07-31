@@ -34,7 +34,7 @@
 
         client.draw(query, document.getElementById("distance-72hr"), {
             title:'',
-            height:240,
+            height:300,
             vAxis: {
                 format:"#,###",
                 title:'ft'
