@@ -2,7 +2,7 @@
 
     var updateParticleVariables = function(){
         // Temperature
-        $.get('https://api.particle.io/v1/devices/54ff6d066672524828511967/temp?access_token=a4b2caee461af9eb3ddf1f4fec22db59b760f652', function(data){
+        $.get('https://api.particle.io/v1/devices/54ff6d066672524828511967/analogvalue?access_token=a4b2caee461af9eb3ddf1f4fec22db59b760f652', function(data){
             $('#temperature').html(data.result);
         });
 
