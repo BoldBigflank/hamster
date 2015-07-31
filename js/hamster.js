@@ -34,7 +34,7 @@
         });
 
         client.draw(query, document.getElementById("distance-72hr"), {
-            title:'',
+            title:'Distance Ran in 30 Minute Increments',
             height:300,
             vAxis: {
                 format:"#,###",
