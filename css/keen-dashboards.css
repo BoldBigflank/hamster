@@ -18,13 +18,13 @@ body.application div[class^="col-"] {
 body.application div[class^="col-"] div[class^="col-"] {
   padding-left: 15px;
   padding-right: 15px;
+  min-height:150px;
 }
 
 body.application hr {
   border-color: #d7d7d7;
   margin: 10px 0;
 }
-
 
 .navbar-inverse {
   background-color: #3d4a57;
@@ -34,6 +34,13 @@ body.application hr {
 .navbar .navbar-brand {
   color: #fbfbfb;
   text-decoration: none;
+}
+
+.temp-display {
+    height: 110px;
+    margin: 15px;
+    padding: 35px;
+    border-radius: 10px;
 }
 
 .main-nav > li > a:hover {
@@ -63,7 +70,7 @@ body.application hr {
 }
 
 .chart-wrapper .chart-stage {
-  /*min-height: 240px;*/
+  min-height: 150px;
   overflow: hidden;
   padding: 5px 10px;
   position: relative;

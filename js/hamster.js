@@ -1,4 +1,10 @@
 !function () {
+    $.get('https://api.particle.io/v1/devices/54ff6d066672524828511967/temp?access_token=a4b2caee461af9eb3ddf1f4fec22db59b760f652', function(data){
+        console.log(data);
+        $('#temperature').html(data.result);
+    });
+
+
     var client = new Keen({
         projectId: "5579d31ac2266c48ad2b17a6",
         readKey: "81afb1829add42142453e0fef36073b7b9c63bfb56f0b57c2eadcbe2a1becd49d354324b6730c9b43c5bd14be6abad2a29553589a35d5537a7d9899b48af45a70ba9ba46c77c5824334710156048e28e885a559c15cc896ff715af7ebb407db64ceaa54f5f617b1a0f2bb461c295c1f3"
