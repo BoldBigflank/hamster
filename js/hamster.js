@@ -79,6 +79,9 @@
             .chartType("columnchart")
             .height(120)
             .chartOptions({
+                legend:{
+                    position:'bottom'
+                },
                 hAxis: {
                     format:'MMM d',
                     gridlines:  {count: 7}
