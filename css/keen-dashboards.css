@@ -37,10 +37,17 @@ body.application hr {
 }
 
 .temp-display {
-    height: 110px;
-    margin: 15px;
-    padding: 35px;
-    border-radius: 10px;
+    height: 55px;
+    margin: 10px;
+    padding: 7px 35px;
+    border-radius: 7px;
+}
+
+.temp-display-tall {
+    height: 120px;
+    margin: 10px;
+    padding: 40px;
+    border-radius: 14px;
 }
 
 .main-nav > li > a:hover {

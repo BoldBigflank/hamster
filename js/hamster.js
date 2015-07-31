@@ -2,7 +2,7 @@
 
     var updateParticleVariables = function(){
         // Temperature
-        $.get('https://api.particle.io/v1/devices/54ff6d066672524828511967/analogvalue?access_token=a4b2caee461af9eb3ddf1f4fec22db59b760f652', function(data){
+        $.get('https://api.particle.io/v1/devices/54ff6d066672524828511967/temp?access_token=a4b2caee461af9eb3ddf1f4fec22db59b760f652', function(data){
             $('#temperature').html(data.result);
         });
 
@@ -24,8 +24,26 @@
     });
 
     Keen.ready(function(){
-        // Hourly distance over 3 days
+        // Daily distance over 7 days
         var query = new Keen.Query("sum", {
+            eventCollection: "trip",
+            interval: "every_1_day",
+            targetProperty: "distance",
+            timeframe: "this_7_days",
+            timezone: "US/Pacific"
+        });
+
+        client.draw(query, document.getElementById("distance-7days"), {
+            title:'Distance Ran Each Day',
+            chartType: "columnchart",
+            height:300,
+            vAxis: {
+                format:"#,###",
+                title:'ft'
+            }
+        });
+
+        var daily_area = new Keen.Query("sum", {
             eventCollection: "trip",
             interval: "every_30_minutes",
             targetProperty: "distance",
@@ -33,9 +51,9 @@
             timezone: "US/Pacific"
         });
 
-        client.draw(query, document.getElementById("distance-72hr"), {
-            title:'Distance Ran in 30 Minute Increments',
-            height:300,
+        client.draw(daily_area, document.getElementById("distance-72hr"), {
+            title:'Distance Ran in the Past 72 Hours',
+            height:120,
             vAxis: {
                 format:"#,###",
                 title:'ft'
