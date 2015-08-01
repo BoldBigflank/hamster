@@ -1,21 +1,32 @@
 !function () {
-
-    var updateParticleVariables = function(){
-        // Temperature
-        $.get('https://api.particle.io/v1/devices/54ff6d066672524828511967/temp?access_token=a4b2caee461af9eb3ddf1f4fec22db59b760f652', function(data){
-            $('#temperature').html(data.result);
+    spark.login({accessToken:'a4b2caee461af9eb3ddf1f4fec22db59b760f652'});
+    var dataResetTimeout;
+    spark.getDevice('54ff6d066672524828511967', function(err, device){
+        device.subscribe('temperature', function(data){
+            $('#temperature').html(data.data);
         });
-
-        $.get('https://api.particle.io/v1/devices/54ff6d066672524828511967/speed?access_token=a4b2caee461af9eb3ddf1f4fec22db59b760f652', function(data){
-            $('#speed').html(data.result);
+        device.subscribe('speed', function(data){
+            clearTimeout(dataResetTimeout);
+            $('#speed').html(parseFloat(data.data).toFixed(2));
+            resetData();
         });
-
-        $.get('https://api.particle.io/v1/devices/54ff6d066672524828511967/distance?access_token=a4b2caee461af9eb3ddf1f4fec22db59b760f652', function(data){
-            $('#distance').html(data.result);
+        device.subscribe('distance', function(data){
+            $('#distance').html(parseFloat(data.data).toFixed(2));
         });
+        
+    });
+
+    var resetData = function(){
+        dataResetTimeout = setTimeout(function(){
+            $('#speed').html("0");
+            $('#distance').html("0");
+        }, 5000);
     };
-    updateParticleVariables();
-    setInterval(updateParticleVariables, 10000);
+
+    // Get the initial temperature
+    $.get('https://api.particle.io/v1/devices/54ff6d066672524828511967/temp?access_token=a4b2caee461af9eb3ddf1f4fec22db59b760f652', function(data){
+        $('#temperature').html(data.result);
+    });
 
     // The Keen.io data
     var client = new Keen({
