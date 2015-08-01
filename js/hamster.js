@@ -75,7 +75,6 @@
             title:'',
             chartType: "columnchart",
             height:120
-            // Custom configuration here
         });
 
         // Daily average speed over 7 days
@@ -88,10 +87,18 @@
         });
           
         client.draw(avg_speed, document.getElementById("avg-speed-by-day"), {
-            title:'',
+            title:'Average Speed by Day',
             chartType: "columnchart",
-            height:120
-            // Custom configuration here
+            height:120,
+            hAxis: {
+                format:'MMM d',
+                gridlines:  {count: 7}
+            },
+            vAxis: {
+                title: 'ft/s',
+                format: '#,###'
+            },
+            colors:["#d9534f"]
         });
 
         var chart = new Keen.Dataviz()
