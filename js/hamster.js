@@ -39,7 +39,8 @@
             height:300,
             vAxis: {
                 format:"#,###",
-                title:'ft'
+                title:'ft',
+                ticks:[0, 5280, 5280*2, 5280*3, 5280*4, 5280*5]
             }
         });
 
