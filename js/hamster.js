@@ -1,7 +1,7 @@
 !function () {
     spark.login({accessToken:'a4b2caee461af9eb3ddf1f4fec22db59b760f652'});
     var dataResetTimeout;
-    spark.getDevice('54ff6d066672524828511967', function(err, device){
+    spark.getDevice('3b003b000747343232363230', function(err, device){
         device.subscribe('temperature', function(data){
             $('#temperature').html(data.data);
         });
@@ -24,7 +24,7 @@
     };
 
     // Get the initial temperature
-    $.get('https://api.particle.io/v1/devices/54ff6d066672524828511967/temp?access_token=a4b2caee461af9eb3ddf1f4fec22db59b760f652', function(data){
+    $.get('https://api.particle.io/v1/devices/3b003b000747343232363230/temp?access_token=a4b2caee461af9eb3ddf1f4fec22db59b760f652', function(data){
         $('#temperature').html(data.result);
     });
 
