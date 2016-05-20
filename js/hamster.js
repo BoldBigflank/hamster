@@ -14,6 +14,10 @@
             $('#distance').html(parseFloat(data.data).toFixed(2));
         });
         
+        device.subscribe('sound', function(data){
+            $('#sound').html(parseInt(data.data)).toFixed(2));
+        })
+        
     });
 
     var resetData = function(){
